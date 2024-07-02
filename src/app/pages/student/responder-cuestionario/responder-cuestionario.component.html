@@ -24,7 +24,7 @@
             <div *ngFor="let opcion of allQuestions[currentQuestionIndex]?.opcion" class="card m-3 option-card">
               <button type="button" (click)="onOptionSelect(opcion.contenido.path)" class="btn p-1">
                 <div class="card-img-container">
-                <img [src]="'http://localhost:4000/' + opcion.contenido.path" alt="Imagen de la opción"
+                <img [src]="'http://3.239.55.7:4000/' + opcion.contenido.path" alt="Imagen de la opción"
                   class="card-img-top img-fluid option-img custom-img w-100 h-100">
                 </div>
               </button>

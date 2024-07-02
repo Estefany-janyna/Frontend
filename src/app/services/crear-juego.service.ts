@@ -9,7 +9,7 @@ import { Leccion } from '../models/leccion.model'; // Asegúrate de importar el 
     providedIn: 'root'
 })
 export class CrearJuegoService {
-    // url = 'http://localhost:4000/api/cuestionario';
+    // url = 'http://3.239.55.7:4000/api/cuestionario';
 
     // constructor(private http: HttpClient) { }
     // getCuestionario(): Observable<Cuestionario[]> {
@@ -31,7 +31,7 @@ export class CrearJuegoService {
     //     return this.http.post(`${this.url}/leccion/${leccionId}/cuestionarios`, formData);
     //   }
 
-    private apiUrl = 'http://localhost:4000/api';
+    private apiUrl = 'http://3.239.55.7:4000/api';
 
     constructor(private http: HttpClient) { }
   

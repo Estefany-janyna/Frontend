@@ -16,7 +16,7 @@ export class DataLoginService {
   private userId: string = '';
   private tokenKey = 'userToken';
   private rolesKey = 'userRoles';
-  private apiUrl = 'http://localhost:4000/api/auth/';
+  private apiUrl = 'http://3.239.55.7:4000/api/auth/';
 
   constructor(
     private http: HttpClient,

@@ -9,7 +9,7 @@ import { DataLoginService } from './data-login.service'; // Importa tu servicio 
 })
 export class UserService {
 
-  url = 'http://localhost:4000/api/users/';
+  url = 'http://3.239.55.7:4000/api/users/';
 
   constructor(private http: HttpClient, private dataLoginService: DataLoginService) {}
 

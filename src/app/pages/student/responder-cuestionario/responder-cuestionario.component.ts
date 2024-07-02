@@ -123,7 +123,7 @@
 //         icon: 'error',
 //         title: 'Respuesta incorrecta',
 //         text: `Incorrecto, la respuesta correcta es:`,
-//         imageUrl: `http://localhost:4000/${correcta?.contenido.path}`,
+//         imageUrl: `http://3.239.55.7:4000/${correcta?.contenido.path}`,
 //         imageWidth: 400,
 //         imageHeight: 200,
 //         imageAlt: 'Respuesta correcta',
@@ -295,7 +295,7 @@ export class ResponderCuestionarioComponent implements OnInit, OnDestroy {
       Swal.fire({
         icon: 'error',
         title: 'Respuesta incorrecta',
-        html: `La respuesta correcta es:<br><img src="http://localhost:4000/${correcta?.contenido.path}" alt="Respuesta correcta" width="400" height="200">`,
+        html: `La respuesta correcta es:<br><img src="http://3.239.55.7:4000/${correcta?.contenido.path}" alt="Respuesta correcta" width="400" height="200">`,
         confirmButtonText: 'Siguiente Pregunta',
         confirmButtonColor: '#0147A2',
         customClass: {

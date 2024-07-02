@@ -10,7 +10,7 @@ import { DataLoginService } from './data-login.service';
   providedIn: 'root'
 })
 export class LeccionService {
-    private apiUrl = 'http://localhost:4000/api/leccion';
+    private apiUrl = 'http://3.239.55.7:4000/api/leccion';
 
     constructor(private http: HttpClient, private authService: DataLoginService) { }
 

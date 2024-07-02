@@ -112,7 +112,7 @@ export class ActualizarQuizComponent implements OnInit {
     if (this.photoSelected[index]) {
       return this.photoSelected[index] as string;
     } else if (path) {
-      return `http://localhost:4000/${path}`;
+      return `http://3.239.55.7:4000/${path}`;
     }
     return undefined;
   }

@@ -9,7 +9,7 @@ import { Diccionario } from '../models/diccionario.model';
 })
 export class DiccionarioService {
 
-    private apiUrl = `http://localhost:4000/api/diccionario`;
+    private apiUrl = `http://3.239.55.7:4000/api/diccionario`;
 
     constructor(private http: HttpClient, private authService: DataLoginService) { }
   

@@ -10,7 +10,7 @@ import { Cuestionario } from '../models/cuestionario';
   providedIn: 'root'
 })
 export class ProgresoService {
-  private apiUrl = `http://localhost:4000/api/progreso`;
+  private apiUrl = `http://3.239.55.7:4000/api/progreso`;
 
   constructor(private http: HttpClient, private authService: DataLoginService) { }
 
@@ -36,6 +36,6 @@ export class ProgresoService {
   }
 
   getCuestionarios(): Observable<Cuestionario[]> {
-    return this.http.get<Cuestionario[]>(`http://localhost:4000/api/cuestionario`, this.getHttpOptions());
+    return this.http.get<Cuestionario[]>(`http://3.239.55.7:4000/api/cuestionario`, this.getHttpOptions());
   }
 }

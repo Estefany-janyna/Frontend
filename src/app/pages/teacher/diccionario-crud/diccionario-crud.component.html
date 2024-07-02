@@ -17,7 +17,7 @@
             </div>
             <div *ngIf="editMode && currentImageUrl" class="mb-3">
               <p>Imagen Actual:</p>
-              <img [src]="'http://localhost:4000/' + currentImageUrl" alt="Imagen Actual" class="img-thumbnail" width="200"/>
+              <img [src]="'http://3.239.55.7:4000/' + currentImageUrl" alt="Imagen Actual" class="img-thumbnail" width="200"/>
             </div>
             <div class="mb-3">
               <label class="form-label">{{ editMode ? 'Cambiar Imagen:' : 'Subir Imagen:' }}</label>
@@ -37,7 +37,7 @@
             <div *ngFor="let termino of terminos" class="col">
               <div class="card h-100 card-hover rounded-5 shadow">
                 <div class="card-img-container">
-                    <img [src]="'http://localhost:4000/' + termino.imageUrl" class="card-img-top img-fluid" alt="{{ termino.title }}">
+                    <img [src]="'http://3.239.55.7:4000/' + termino.imageUrl" class="card-img-top img-fluid" alt="{{ termino.title }}">
                 </div>
                 <div class="card-body">
                   <h5 class="card-title">{{ termino.title }}</h5>

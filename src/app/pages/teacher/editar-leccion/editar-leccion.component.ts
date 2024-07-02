@@ -48,7 +48,7 @@ export class EditarLeccionComponent implements OnInit{
       leccion => {
         this.leccionForm.patchValue(leccion);
         if (leccion.portada) {
-          this.portadaSeleccionada = `http://localhost:4000/${leccion.portada}`;
+          this.portadaSeleccionada = `http://3.239.55.7:4000/${leccion.portada}`;
         }
       },
       error => console.error('Error al obtener la lección', error)
