@@ -1,0 +1,61 @@
+<div class="container-fluid g-0">
+    <app-topbar-teacher (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar-teacher>
+
+    <main class="d-flex">
+        <app-navbar-teacher [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+            class="fixed-side-nav"></app-navbar-teacher>
+
+        <div class="display-area col-lg-8 col-md-10 col-sm-12 p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+            <div *ngIf="leccion" class="card shadow-sm p-4 mb-4 bg-white rounded">
+                <h2 class="mb-3">{{ leccion.titulo }}</h2>
+                <p class="text-muted">{{ leccion.descripcion }}</p>
+                <p><strong>Creador:</strong> {{ leccion.creador.username }}</p>
+                <p><strong>Nivel:</strong> {{ leccion.nivel }}</p>
+                <p><strong>Puntaje Total:</strong> {{ leccion.puntajeTotalEstimado }}</p>
+                <div *ngFor="let cuestionario of leccion.CuestionarioIds" class="mb-3">
+                    <div class="card mb-2">
+                        <div class="card-header d-flex justify-content-between align-items-center py-2">
+                            <h6 class="mb-0">{{ cuestionario.enunciado }}</h6>
+                            <div>
+                                <button class="btn btn-outline-secondary btn-sm me-1">
+                                    <i class="fas fa-clock"></i> {{ cuestionario.tiempoLimite }} s
+                                </button>
+                                <button class="btn btn-outline-secondary btn-sm">
+                                    <i class="fas fa-star"></i> {{ cuestionario.puntaje }} pts
+                                </button>
+                            </div>
+                        </div>
+                    <div class="card-body p-2">
+                            <h5>Opciones:</h5>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-6 mb-2" *ngFor="let opcion of cuestionario.opciones">
+                                    <div class="card h-100">
+                                        <img [src]="'http://localhost:4000/' + opcion.contenido.path" class="card-img-top img-fluid" alt="imagen">
+                                        <div class="card-body p-2 text-center">
+                                            <span [ngClass]="{'correct': opcion.esCorrecta}"
+                                                class="w-40 btn-transition rounded-pill me-2 p-2  badge bg-{{ opcion.esCorrecta ? 'success' : 'danger' }}">
+                                                {{ opcion.esCorrecta ? 'Correcta' : 'Incorrecta' }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <button class="btn btn-soft-primary btn-sm w-50 btn-transition rounded-pill me-2 p-2" (click)="navegarAEditarCuestionario(cuestionario._id)">
+                                    <i class="fas fa-edit"></i> Editar
+                                </button>
+                                <button class="btn btn-soft-danger btn-sm w-50 btn-transition rounded-pill me-2 p-2" (click)="confirmDelete(cuestionario._id)">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-secondary w-100" (click)="navegarAAgregarCuestionarios(leccion._id)">
+                    <i class="fas fa-plus"></i> Añadir Cuestionarios
+                </button>
+            </div>
+        </div>
+    </main>
+</div>

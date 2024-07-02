@@ -1,0 +1,17 @@
+<p>revisar-resultados works!</p>
+<main style="margin-top: 58px;">
+    <div class="container pt-4">
+      <h2>Resultados del Cuestionario</h2>
+      <div *ngIf="resultados">
+        <div *ngFor="let resultado of resultados[0]?.respuestas">
+          <p>Pregunta: {{ resultado.pregunta }}</p>
+          <img [src]="'http://localhost:4000/' + resultado.respuesta" alt="Respuesta">
+          <p *ngIf="resultado.esCorrecta; else incorrecta">Correcto</p>
+          <ng-template #incorrecta><p>Incorrecto</p></ng-template>
+          <hr>
+        </div>
+        <p>Puntaje Total: {{ resultados[0]?.puntajeTotal }}</p>
+      </div>
+    </div>
+  </main>
+  

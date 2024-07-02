@@ -1,0 +1,70 @@
+<div class="container-fluid g-0">
+  <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+
+  <main>
+    <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbarmenu>
+
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+      <div class="container pt-4 d-flex justify-content-center">
+        <div class="card mb-4 shadow-lg w-100" style="max-width: 900px;">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex justify-content-around">
+                <span class="badge bg-secondary-subtle text-primary-emphasis p-3 m-2">
+                  <i class="fas fa-clock"></i> {{ leccion.puntajeTotalEstimado }} s
+                </span>
+                <span class="badge bg-secondary-subtle text-primary-emphasis p-3 m-2">
+                  <i class="fas fa-star"></i> {{ leccion.numeroVidas }} pts
+                </span>
+                <span class="badge bg-secondary-subtle text-primary-emphasis p-3 m-2">
+                  <i class="fas fa-level-up-alt"></i>{{ leccion.nivel }}
+                </span>
+              </div>
+              <div>
+                <span class="badge bg-primary rounded-pill">{{ leccion.tipo }}</span>
+              </div>
+            </div>
+
+            <div class="row g-0">
+              <div class="col-md-6 d-flex justify-content-center align-items-center">
+                <div class="card-img-container">
+                  <img [src]="'http://localhost:4000/' + leccion.portada" class="card-img-top img-fluid mb-3 rounded" alt="Portada de {{ leccion.titulo }}" style="height: 400px; object-fit: cover;">
+                </div>
+              </div>
+              <div class="col-md-6 d-flex flex-column">
+                <h2 class="card-title text-primary-emphasis fs-4 text-center mb-4"><b>{{ leccion.titulo }}</b></h2>
+                <hr class="w-75 mx-auto">
+                <p class="card-text fs-6 text-center">{{ leccion.descripcion }}</p>
+                <div class="d-flex justify-content-center mt-auto">
+                  <button class="btn btn-ir btn-lg mt-5 mb-4 p-3 fs-4" (click)="empezarLeccion()">¡Empezar la Aventura!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+
+<style>
+.card-img-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-img-container img {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+
+
+</style>

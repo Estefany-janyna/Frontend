@@ -1,0 +1,31 @@
+/*alinear con el sidebar*/
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+    }
+}
+
+.card.card-first {
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 50px;
+        /* Separación vertical con el navbar */
+
+    
+}
+.card.card-other {
+  
+    margin-top:10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.btn-purple {
+    background-color: rgb(121, 60, 200) !important;
+    border-color:  black;
+    border-radius: 0;
+    width: 800px;
+}
+.btn-purple:active {
+    background-color: rgb(194, 123, 252) !important;
+ 
+}

@@ -1,0 +1,93 @@
+<div class="container-fluid g-0">
+    <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+
+    <main>
+        <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+            class="fixed-side-nav"></app-navbarmenu>
+
+        <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+
+            <div class="container mt-5">
+                <div class="search-bar mb-4">
+                    <div class="input-group">
+                        <input type="text" class="form-control form-control-lg rounded-start-3 border-0 fs-1 p-3"
+                            [(ngModel)]="searchQuery" placeholder="Buscar...">
+                        <button class="btn btnstyle btn-outline-primary rounded-end-3 p-4" (click)="search()">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="card-container row row-cols-1 row-cols-md-3 g-4 mt-4">
+                    <div *ngFor="let termino of terminos" class="col">
+                        <div class="card h-100 text-primary-emphasis m-1 p-3">
+                            <h5 class="card-title text-center fs-2"><b>{{termino.title}}</b></h5>
+                            <div class="card-img-container">
+                                <img [src]="'http://localhost:4000/' + termino.imageUrl" class="card-img-top"
+                                    alt="{{termino.title}}">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <button class="btn btbcolor text-primary-emphasis p-3"
+                                    [routerLink]="['/diccionario', termino._id]">Ver Detalles <i
+                                        class="fa fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+<style>
+    .search-bar {
+
+        position: sticky;
+        top: 100px;
+        z-index: 1028;
+
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    }
+
+    img {
+        color: #0056b3;
+    }
+
+    .card-img-container {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .btbcolor {
+        background-color: #c3d6ea;
+        color: rgb(176, 230, 255);
+
+    }
+
+    .btbcolor:hover {
+        background-color: #c9e1fa;
+        color: rgb(5, 3, 73);
+        transform: scale(1.1);
+    }
+
+    .btnstyle {
+        background-color: #fdfdfd;
+        color: rgb(3, 4, 101);
+        font-size: 25px;
+    }
+
+    .btnstyle:hover {
+        background-color: #daebfe;
+        color: #0056b3
+    }
+</style>

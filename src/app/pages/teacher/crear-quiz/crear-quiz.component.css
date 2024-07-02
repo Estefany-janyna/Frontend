@@ -1,0 +1,157 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
+
+
+.fixed-topbar {
+    position: fixed; /*con esto se mantiene estatico la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+  .fixed-side-nav {
+    position: fixed;
+  }
+  
+  .black-border{
+    border: 2px solid #4337c8;
+  }
+  
+  app-topbar-teacher{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 4rem;
+    z-index: 2;
+  }
+  
+  main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+  }
+  
+  app-navbar-teacher{
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem);
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    background-color: #e6e1e194;
+    /* border-top: 1px solid white; */
+  
+    /* esto se pone */
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: left 250ms ease-in width 250ms ease-in;
+    cursor: pointer;
+  }
+  
+  /* cada ves que se abre */
+  .app-side-nav-open{
+    width: 250px;
+  }
+  
+  
+  .display-area {
+    position: absolute;
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  
+  .display-area-shrink {
+    width: calc(100% - 250px);
+    left: 250px;
+  }
+  
+  .grow-on-hover {
+    transition: transform 0.3s;
+  }
+  
+  .grow-on-hover:hover {
+    transform: scale(1.09);
+  }
+  
+
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav>li {
+    display: inline-block;
+   
+}
+
+.top-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+
+
+/* Side Navigation */
+
+@media(min-width:768px) {
+    .side-nav {
+        position: fixed;
+        top: 60px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        border-top: 1px rgba(0, 0, 0, .5) solid;
+        overflow-y: auto;
+        background-color: #222;
+        /*background-color: #5A6B7D;*/
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav>li>a {
+        width: 225px;
+        border-bottom: 1px rgba(0, 0, 0, .3) solid;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #1a242f !important;
+    }
+}
+
+.card opciones{
+    width: 300px;
+    height: 300px;
+    margin: 0 10px;
+            /* Margen horizontal */
+} 
+.row{
+     margin: 40px;
+     /* Margen alrededor del contenedor */
+ }
+.pregunta {
+    height: 100px;
+    text-align: center;
+            /* Centrar texto */
+       /* Altura del input */
+}
+
+.btn-separado {
+    margin: 5px;
+}
+.text-right {
+    text-align: right !important;
+}
+
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+    }
+}

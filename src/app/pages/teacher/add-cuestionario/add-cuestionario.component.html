@@ -1,0 +1,46 @@
+ <!-- <h2>Añadir Cuestionarios a Lección</h2>
+<form (ngSubmit)="addCuestionarios()">
+  <div *ngFor="let cuestionario of cuestionarios">
+    <input type="checkbox" [value]="cuestionario._id" (change)="onCheckboxChange($event)">
+    {{ cuestionario.enunciado }}
+  </div>
+  <button type="submit">Añadir Cuestionarios</button>
+</form> -->
+
+ <div class="container-fluid g-0"> 
+
+  <app-topbar-teacher (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar-teacher>
+  <main>
+
+    <app-navbar-teacher [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+      class="fixed-side-nav"></app-navbar-teacher>
+
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+      <h2>Añadir Cuestionarios a Lección</h2>
+      <form [formGroup]="cuestionarioForm" (ngSubmit)="addCuestionarios()">
+        <div *ngFor="let cuestionario of cuestionarios">
+          <input type="checkbox" [value]="cuestionario._id" (change)="onCheckboxChange($event)">
+          {{ cuestionario.enunciado }}
+        </div>
+        <button type="submit">Añadir Cuestionarios</button>
+      </form>
+      </div>
+  </main>
+</div> 
+
+<!-- <div class="container-fluid g-0">
+  <app-topbar-teacher (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar-teacher>
+  <main>
+    <app-navbar-teacher [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbar-teacher>
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+      <h2>Añadir Cuestionarios a Lección</h2>
+      <form [formGroup]="cuestionarioForm" (ngSubmit)="addCuestionarios()">
+        <div *ngFor="let cuestionario of cuestionarios">
+          <input type="checkbox" [value]="cuestionario._id" (change)="onCheckboxChange($event)">
+          {{ cuestionario.enunciado }}
+        </div>
+        <button type="submit">Añadir Cuestionarios</button>
+      </form>
+    </div>
+  </main>
+</div> -->

@@ -1,0 +1,13 @@
+<div class="container">
+    <h2>Lista de Estudiantes</h2>
+    <div *ngFor="let estudiante of estudiantes" class="card mb-3">
+      <div class="card-body">
+        <h5 class="card-title">{{ estudiante.name }} {{ estudiante.surname }}</h5>
+        <p class="card-text">{{ estudiante.email }}</p>
+        <button [routerLink]="['/progreso', estudiante._id]" class="btn btn-primary">
+          Ver Progreso
+        </button>
+      </div>
+    </div>
+  </div>
+  

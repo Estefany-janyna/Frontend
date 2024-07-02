@@ -1,0 +1,51 @@
+<div class="container-fluid g-0">
+    <!-- Incluye el componente de la barra superior -->
+    <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+
+    <main class="d-flex">
+        <!-- Incluye el componente del menú de navegación -->
+        <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbarmenu>
+
+        <!-- Área principal de visualización, ajustada con la navegación lateral -->
+        <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+            <router-outlet></router-outlet>
+
+            <!-- El contenido adicional del juego de memoria -->
+            <div class="main">
+                <div class="cards" *ngIf="!isRecursoInfoRoute">
+                    <h2 class="titulo fs-1 text-primary-emphasis text-center"><strong>Aprende Más</strong></h2>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-4 mb-4" *ngFor="let card of cards">
+                            <div class="card h-100 shadow-lg" (click)="toggleCard($event)">
+                                <div class="card__image-holder">
+                                    <img class="card__image" [src]="card.imageUrl" [alt]="card.title" />
+                                </div>
+                                <div class="card-title">
+                                    <a href="#" class="toggle-info btn">
+                                        <span class="left"></span>
+                                        <span class="right"></span>
+                                    </a>
+                                    <h2>
+                                        {{ card.title }}
+                                        <small>{{ card.subtitle }}</small>
+                                    </h2>
+                                </div>
+                                <div class="card-flap flap1">
+                                    <div class="card-description">
+                                        {{ card.description }}
+                                    </div>
+                                    <div class="card-flap flap2">
+                                        <div class="card-actions">
+                                            <a routerLink="/recursomodule/recursoinfo" class="btn">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

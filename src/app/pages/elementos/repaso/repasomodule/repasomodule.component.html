@@ -1,0 +1,54 @@
+<div class="container-fluid g-0">
+  <!-- Incluye el componente de la barra superior -->
+  <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+
+  <main class="d-flex">
+    <!-- Incluye el componente del menú de navegación -->
+    <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+      class="fixed-side-nav"></app-navbarmenu>
+
+    <!-- Área principal de visualización, ajustada con la navegación lateral -->
+    <div class="display-area col-lg-10 col-md-10 col-sm-12 p-3  text-primary-emphasis" [ngClass]="{'display-area-shrink': navbarStatus}">
+      <!-- El contenido adicional del juego de memoria -->
+      <div class="main">
+        <h2 class="titulo text-center fs-1"><b>Juego de Memoria</b></h2>
+        <div class="memory-game row justify-content-center">
+          <div *ngFor="let card of cards" (click)="flipCard(card)" class="card col-6 col-md-3 col-lg-2">
+            <img [src]="card.imgSrc" class="card-front img-fluid" *ngIf="card.flipped || card.solved" />
+            <div class="card-back" *ngIf="!card.flipped && !card.solved"></div>
+          </div>
+        </div>
+
+        <!-- <div *ngIf="congratulationMessage" class="congratulation-message alert alert-success mt-4">
+          {{ congratulationMessage }}
+        </div> -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal de felicitación -->
+  <div class="modal fade" id="congratulationModal" tabindex="-1" aria-labelledby="congratulationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="congratulationModalLabel">¡Felicidades!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="congratulation-container text-center">
+            <div class="congratulation-message alert alert-success mt-4">
+              {{ congratulationMessage }}
+            </div>
+            <div class="confetti"></div>
+            <div class="banners">
+              <img src="path/to/banner1.png" alt="Banner" class="banner"/>
+              <img src="path/to/banner2.png" alt="Banner" class="banner"/>
+              <!-- Añade más imágenes de banner según sea necesario -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

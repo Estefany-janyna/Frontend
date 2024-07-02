@@ -1,0 +1,27 @@
+<p>student-leccion works!</p>
+<!-- <h2>Lista de Estudiantes</h2>
+<div *ngFor="let estudiante of estudiantes">
+  <p>{{ estudiante.username }} ({{ estudiante.email }})</p>
+  <button (click)="bloquearEstudiante(estudiante._id)" *ngIf="!estudiante.blocked">Bloquear</button>
+  <button (click)="desbloquearEstudiante(estudiante._id)" *ngIf="estudiante.blocked">Desbloquear</button>
+</div> -->
+<app-dashboard [mostrarmain]="false"></app-dashboard>
+
+<main style="margin-top: 58px;">
+  <div class="container pt-4">
+    <h2>Lista de Estudiantes</h2>
+    <div *ngIf="estudiantes.length === 0">No hay estudiantes disponibles</div>
+    <ul *ngIf="estudiantes.length > 0">
+      <li *ngFor="let estudiante of estudiantes">
+        <h3>{{ estudiante.username }}</h3>
+        <p>{{ estudiante.email }}</p>
+        <button class="btn btn-warning" (click)="bloquearEstudiante(estudiante._id)">
+          <i class="fas fa-user-lock"></i> Bloquear Estudiante
+        </button>
+        <button class="btn btn-success" (click)="desbloquearEstudiante(estudiante._id)">
+          <i class="fas fa-user-check"></i> Desbloquear Estudiante
+        </button>
+      </li>
+    </ul>
+  </div>
+</main>

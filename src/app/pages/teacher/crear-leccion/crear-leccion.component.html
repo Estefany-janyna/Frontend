@@ -1,0 +1,66 @@
+<div class="container-fluid g-0">
+  <app-topbar-teacher (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar-teacher>
+  <main class="d-flex">
+    <app-navbar-teacher [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbar-teacher>
+
+    <div class="display-area col-lg-6 col-md-8 col-sm-10 col-xs-12 p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+      <h2>Crear Lección</h2>
+      <form (ngSubmit)="createLeccion()" [formGroup]="leccionForm" class="needs-validation p-5 rounded-5 shadow-lg" novalidate>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="titulo" class="text-light-emphasis">Título</label>
+            <input type="text" class="form-control rounded-5" id="titulo" formControlName="titulo" required>
+            <div class="invalid-feedback">Por favor, ingresa el título.</div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="descripcion" class="text-light-emphasis">Descripción</label>
+            <textarea class="form-control rounded-5" id="descripcion" formControlName="descripcion" required></textarea>
+            <div class="invalid-feedback">Por favor, ingresa la descripción.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="portada" class="form-label">Portada</label>
+            <input type="file" class="form-control rounded-5" id="portada" (change)="onFileSelected($event)">
+            <img *ngIf="portadaSeleccionada" [src]="portadaSeleccionada" alt="Portada seleccionada" class="img-fluid mt-3">
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="tiempoEstimado" class="form-label">Tiempo Estimado</label>
+            <input type="number" class="form-control rounded-5" id="tiempoEstimado" formControlName="tiempoEstimado" required>
+            <div class="invalid-feedback">Por favor, ingresa el tiempo estimado.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="numeroVidas" class="form-label">Número de Vidas</label>
+            <input type="number" class="form-control rounded-5" id="numeroVidas" formControlName="numeroVidas" required>
+            <div class="invalid-feedback">Por favor, ingresa el número de vidas.</div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="puntajeTotalEstimado" class="form-label">Puntaje Total Estimado</label>
+            <input type="number" class="form-control rounded-5" id="puntajeTotalEstimado" formControlName="puntajeTotalEstimado" required>
+            <div class="invalid-feedback">Por favor, ingresa el puntaje total estimado.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="nivel" class="form-label rounded-5">Nivel</label>
+            <select class="form-select" id="nivel" formControlName="nivel" required>
+              <option value="" disabled selected>Selecciona el nivel</option>
+              <option value="BASICO">BÁSICO</option>
+              <option value="INTERMEDIO">INTERMEDIO</option>
+              <option value="AVANZADO">AVANZADO</option>
+            </select>
+            <div class="invalid-feedback">Por favor, selecciona el nivel.</div>
+          </div>
+          <div class="col-md-6 d-flex align-items-end">
+            <button type="submit" class="btn btn-success w-50 btn-transition rounded-pill me-2">Crear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>

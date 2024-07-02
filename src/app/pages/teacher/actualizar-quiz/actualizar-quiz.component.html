@@ -1,0 +1,76 @@
+<div class="container-fluid g-0">
+
+  <app-topbar-teacher (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar-teacher>
+  <main>
+
+    <app-navbar-teacher [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+      class="fixed-side-nav"></app-navbar-teacher>
+
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+
+  <form [formGroup]="cuestionarioForm" (ngSubmit)="onSubmit()">
+    <div class="container pt-4">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title">Actualizar Cuestionario</h2>
+              <br>
+              <label for="enunciado">Pregunta</label>
+              <input type="text" id="enunciado" formControlName="enunciado" class="form-control pregunta" placeholder="Escriba la pregunta aquí">
+              <hr>
+              <label for="opciones">Opciones</label>
+              <div class="container">
+                <div formArrayName="opciones" id="opcionesContainer" class="row justify-content-around">
+                  <div class="col-md-4" *ngFor="let opcion of opciones.controls; let i = index">
+                    <div class="card">
+                      <div class="card-body" [formGroupName]="i">
+                        <div class="form-group">
+                          <label for="path{{i}}">Contenido (URL de imagen o video):</label>
+                          <input type="file" class="d-none form-control" id="path{{i}}" formControlName="path" style="display: none;" (change)="onFileSelected($event, i)" #photoInput>
+                          <img [src]="getPhoto(i) || '../../../../assets/portada/uploadPhoo.jpg'" class="img-fluid" alt="fotoPortada" (click)="photoInput.click()">
+                        </div>
+                        <div class="checkbox">
+                          <label>
+                            <input type="checkbox" id="esCorrecta{{i}}" formControlName="esCorrecta" (change)="onCheckboxChange(i)"> ¿Es la respuesta correcta?
+                          </label>
+                        </div>
+                        <button type="button" class="btn btn-danger" (click)="eliminarOpcion(i)">
+                          <i class="fas fa-trash"></i> Eliminar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center mt-4">
+                  <button type="button" class="btn btn-success" (click)="agregarOpcion()">
+                    <i class="fas fa-plus"></i> Agregar Opción
+                  </button>
+                </div>
+              </div>
+              <hr>
+              <div class="form-group">
+                <label for="puntaje">Puntaje:</label>
+                <select id="puntaje" class="form-control" formControlName="puntaje">
+                  <option *ngFor="let punto of puntos" [value]="punto">{{ punto }} puntos</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="tiempoLimite">Tiempo</label>
+                <select id="tiempoLimite" class="form-control" formControlName="tiempoLimite">
+                  <option *ngFor="let tiempo of tiempos" [value]="tiempo">{{ tiempo }} segundos</option>
+                </select>
+              </div>
+              <div class="text-right">
+                <button type="submit" class="btn btn-success" (click)="onSubmit()">Guardar</button>
+                <a href="/lecciones" type="button" class="btn btn-danger btn-separado">Cancelar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+</main>
+</div>

@@ -1,0 +1,100 @@
+<div class="container-fluid g-0">
+    <app-topbar-admin (navbarMenu)="navbarStatus = $event;"></app-topbar-admin>
+
+    <main>
+        <app-navbar-admin [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+            class="fixed-side-nav"></app-navbar-admin>
+        <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+            <div class="container-fluid borde-table">
+            <h2 class="my-3 p-3 text-center shadow-sm text-primary-emphasis">Lista de
+                Estudiantes</h2>
+
+            <div class="input-group mb-3" style="max-width: 300px;">
+                <input class="form-control rounded-start-5" id="searchInput" type="text" placeholder="Buscar...">
+                <button class="btn btn-outline-secondary text-primary-emphasis rounded-end-5" id="searchButton"
+                    type="button">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover rounded-5 shadow">
+                    <thead class="text-center bg-primary text-white">
+                        <tr>
+                            <th>Name</th>
+                            <th>Surname</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-center">
+                        <tr *ngFor="let student of students">
+                            <td>{{ student.name }}</td>
+                            <td>{{ student.surname }}</td>
+                            <td>{{ student.username }}</td>
+                            <td>{{ student.email }}</td>
+                            <td>{{ student.phone }}</td>
+                            <td>
+                                <button class="btn btn-sm me-4 grow-on-hover text-primary-emphasis"
+                                    (click)="selectStudent(student)">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="btn btn-sm grow-on-hover text-danger"
+                                    (click)="confirmDelete(student._id)">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+            <div *ngIf="selectedStudent" class="container mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="p-4 bg-light rounded shadow">
+                            <h3 class="text-secondary mb-3">Edit Student</h3>
+                            <form [formGroup]="editForm" (ngSubmit)="saveStudent()">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input id="name" type="text" class="form-control" formControlName="name"
+                                        placeholder="Enter name">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="surname" class="form-label">Surname</label>
+                                    <input id="surname" type="text" class="form-control" formControlName="surname"
+                                        placeholder="Enter surname">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="username" class="form-label">Username</label>
+                                    <input id="username" type="text" class="form-control" formControlName="username"
+                                        placeholder="Enter username">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input id="email" type="email" class="form-control" formControlName="email"
+                                        placeholder="Enter email">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Phone</label>
+                                    <input id="phone" type="text" class="form-control" formControlName="phone"
+                                        placeholder="Enter phone number">
+                                </div>
+                                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <button class="btn btn-outline-primary me-md-2 mb-2 mb-md-0" type="submit">
+                                        <i class="fas fa-save text-primary-emphasis me-2"></i> Update
+                                    </button>
+                                    <button class="btn btn-outline-primary" type="button" (click)="cancelEdit()">
+                                        <i class="fas fa-times-circle text-primary-emphasis me-2"></i> Cancel
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

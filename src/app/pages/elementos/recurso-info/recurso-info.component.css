@@ -1,0 +1,22 @@
+.col img {
+    width: 300%;
+    /* 25% del ancho del contenedor menos 20px de espacio entre imágenes */
+    height: auto;
+    display: block;
+    margin-bottom: 30px;
+    /* Espacio entre las imágenes */
+    margin-right: 20px;
+    /* Espacio entre las imágenes */
+    margin-left: 20px;
+    /* Espacio entre las imágenes */
+}
+.titulo {
+    text-align: center;
+
+    margin-top: 40px;
+
+    /* Tamaño del título */
+    animation: popping 0.5s ease;
+    /* Animación popping */
+
+}

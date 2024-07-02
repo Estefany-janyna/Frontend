@@ -1,0 +1,129 @@
+
+.fixed-topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.fixed-side-nav {
+  position: fixed;
+}
+
+.black-border {
+  border: 2px solid #4337c8;
+}
+
+app-header {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 4rem;
+  z-index: 2;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  top: 4rem;
+  z-index: 1;
+}
+
+app-navbarmenu{
+  position: absolute;
+  left: 0rem;
+  width: 60px;
+  height: calc(100vh - 4rem);
+  background-color: #ffffff;
+  box-shadow: 3px 3px 4px rgba(97, 96, 96, 0.5);
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: left 250ms ease-in width 250ms ease-in;
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+/* cada ves que se abre */
+.app-side-nav-open{
+  width: 240px;
+}
+
+
+.display-area {
+  position: absolute;
+  left: 80px;
+  width: calc(100% - 60px);
+}
+
+.display-area-shrink {
+  width: calc(100% - 250px);
+  left: 260px;
+}
+
+
+.grow-on-hover {
+  transition: transform 0.3s;
+}
+
+.grow-on-hover:hover {
+  transform: scale(1.09);
+}
+
+
+.form-control {
+    border-radius: 0.25rem;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* .border-2 {
+    border: 2px solid #4337c8;
+} */
+
+
+/* Estilos para la vista de perfil */
+
+
+#circularChart {
+    width: 100% !important;
+    height: 430px !important; /* Ajusta la altura según sea necesario */
+}
+
+
+.border {
+    box-shadow: 0 4px 8px rgba(58, 112, 249, 0.1);
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+}
+
+.grow-on-hover {
+    transition: transform 0.3s;
+}
+
+.grow-on-hover:hover {
+    transform: scale(1.09);
+}
+
+/* Animaciones */
+.animate__animated {
+    animation-duration: 0.5s;
+}
+
+.animate__fadeIn {
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

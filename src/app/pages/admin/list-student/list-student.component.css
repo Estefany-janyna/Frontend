@@ -1,0 +1,104 @@
+
+.fixed-side-nav{
+    position: fixed;
+  }
+  .black-border{
+      border: 2px solid #4337c8;
+    }
+    
+    app-topbar-admin{
+      position: fixed;
+      width: 100%;
+      top: 0px;
+      height: 4rem;
+      z-index: 2;
+    }
+    
+    main{
+      position: absolute;
+      width: 100%;
+      top: 4rem;
+      z-index: 1;
+    }
+    
+    app-navbar-admin{
+      position: absolute;
+      left: 0rem;
+      width: 60px;
+      height: calc(100vh - 4rem);
+      background-color: #ffffff;
+      /* border-top: 1px solid white; */
+      box-shadow: 3px 3px 4px rgba(97, 96, 96, 0.5);
+      /* esto se pone */
+      overflow-x: hidden;
+      white-space: nowrap;
+      transition: left 250ms ease-in width 250ms ease-in;
+      cursor: pointer;
+      padding-top: 20px;
+      
+    }
+    
+    /* cada ves que se abre */
+    .app-side-nav-open{
+      width: 240px;
+    }
+    
+    
+    .display-area {
+      position: absolute;
+      left: 60px;
+      width: calc(100% - 60px);
+    }
+    .display-area-shrink {
+      width: calc(100% - 250px);
+      left: 260px;
+    }
+    
+    .grow-on-hover {
+      transition: transform 0.3s;
+    }
+    
+    .grow-on-hover:hover {
+      transform: scale(1.09);
+    }
+
+    /* OTHERS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4;
+  }
+  
+  button {
+    margin-right: 5px;
+  }
+  
+/* 
+.table-responsive {
+    overflow-x: auto;
+} */
+
+
+
+.table {
+    border-radius: 100px;
+}
+
+.table-hover tbody tr:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+}
+
+.borde-table{
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 20px; /* Bordes redondeados */
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 29px;
+ }

@@ -1,0 +1,24 @@
+
+   <div class="container">
+    <div *ngIf="!mostrarResultadoFinal">
+      <h2>{{ cuestionarioActual?.enunciado }}</h2>
+      <div *ngFor="let opcion of cuestionarioActual?.opciones">
+        <div class="opcion" (click)="respuestaSeleccionada = opcion">
+          <img [src]="opcion.contenido.path" alt="Opción">
+        </div>
+      </div>
+      <button (click)="enviarRespuesta()" [disabled]="!respuestaSeleccionada">Enviar</button>
+    </div>
+  
+    <div *ngIf="mostrarResultado">
+      <p *ngIf="respuestaSeleccionada.esCorrecta">¡Correcto!</p>
+      <p *ngIf="!respuestaSeleccionada.esCorrecta">Incorrecto. La respuesta correcta es <img alt="Respuesta Correcta"></p>
+    </div>
+  
+    <div *ngIf="mostrarResultadoFinal">
+      <h2>¡Lección completada!</h2>
+      <p>Puntaje total: {{ puntaje }}</p>
+    </div>
+  </div>
+  
+

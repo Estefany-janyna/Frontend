@@ -1,0 +1,84 @@
+<div class="container-fluid" style="background: linear-gradient(to bottom, #003366, #4a90e2); min-height: 100vh;display: flex; justify-content: center; align-items: center">
+    <!-- Fondo púrpura y altura mínima -->
+    <section class="container py-5"> <!-- Sección con fondo púrpura -->
+        <div class="container">
+            <a routerLink="/opcion-registro" class="link-light"><i class="bi bi-arrow-left"> Regresar</i></a>
+        </div>
+        <!-- Contenedor para el formulario y la imagen -->
+        <div class="row justify-content-center"> <!-- Centrar el contenido -->
+            <div class="col-lg-8 col-md-10 mx-auto"> <!-- Ancho grande pero centrado -->
+                <div class="rounded-5 bg-white border p-4"> <!-- Fondo blanco con borde -->
+                    <div class="row"> <!-- Organizar contenido -->
+                        <!-- Imagen decorativa -->
+                        <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                            <!-- Centrar verticalmente -->
+                            <img src="../../../../assets/images/lenguaje-senas.png" alt="Imagen decorativa"
+                                class="img-fluid rounded"> <!-- Imagen decorativa -->
+                        </div>
+
+                        <!-- Formulario -->
+                        <form  class="col-lg-6 col-md-12 col-12" [formGroup]="registerTeacherForm" (ngSubmit)="onRegister()"> <!-- Espacio para el formulario -->
+                            <div class="text-center mb-4">
+                                <h2>Regístrate</h2>
+                                <p>Introduce tus datos para crear una cuenta</p>
+                            </div>
+
+                            <!-- Campos para el formulario de registro -->
+                            <div class="row"> <!-- Distribuir campos en dos columnas -->
+                                <div class="col-6 mb-3"> <!-- Primera columna -->
+                                    <label for="name" class="form-label fw-semibold">Nombre:</label>
+                                    <input type="text" class="form-control" formControlName="name" placeholder="Tu nombre" />
+                                </div>
+                                <div class="col-6 mb-3"> <!-- Segunda columna -->
+                                    <label for="surname" class="form-label fw-semibold">Apellido:</label>
+                                    <input type="text" class="form-control" formControlName="surname" placeholder="Tu apellido" />
+                                </div>
+                            </div>
+
+                            <div class="row"> <!-- Segunda fila con dos columnas -->
+                                <div class="col-6 mb-3"> <!-- Primera columna -->
+                                    <label for="username" class="form-label fw-semibold">Nombre de usuario:</label>
+                                    <input type="text" class="form-control"formControlName="username" placeholder="Tu nombre de usuario" />
+                                </div>
+                                <div class="col-6 mb-3"> <!-- Segunda columna -->
+                                    <label for="email" class="form-label fw-semibold">Correo Electrónico:</label>
+                                    <input type="email" class="form-control" formControlName="email" placeholder="Tu correo electrónico" />
+                                </div>
+                            </div>
+
+                            <div class="row"> <!-- Tercera fila con dos columnas -->
+                                <div class="col-6 mb-3"> <!-- Primera columna -->
+                                    <label for="phone" class="form-label fw-semibold">Teléfono:</label>
+                                    <input type="text" class="form-control" formControlName="phone" placeholder="Tu número de teléfono" />
+                                </div>
+                                <div class="col-6 mb-3"> <!-- Segunda columna -->
+                                    <label for="password" class="form-label fw-semibold">Contraseña:</label>
+                                    <input type="password" class="form-control" formControlName="password" placeholder="Tu contraseña" />
+                                </div>
+                            </div>
+
+                            <div class="row"> <!-- Tercera fila con dos columnas -->
+                                <div class="col-6 mb-3"> <!-- Segunda columna -->
+                                    <label for="confirmarContraseña" class="form-label fw-semibold">Confirmar Contraseña:</label>
+                                    <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Tu contraseña" />
+                                </div>
+                            </div>
+
+
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary btn-lg">Registrarse</button>
+                            </div>
+
+                            <!-- Opción para iniciar sesión -->
+                            <div class="text-center mt-4"> <!-- Para separarlo del borde -->
+                                <p>¿Ya tienes cuenta? <a routerLink="/login" class="text-decoration-underline">Inicia sesión
+                                        aquí</a></p> <!-- Enlace para iniciar sesión -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

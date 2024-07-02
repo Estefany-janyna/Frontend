@@ -1,0 +1,139 @@
+<app-modalprueba></app-modalprueba>
+<div class="container-fluid g-0">
+    <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+
+    <main>
+        <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbarmenu>
+
+        <div class="display-area p-3 text-primary-emphasis" [ngClass]="{'display-area-shrink': navbarStatus}">
+            <p class="fs-4 fw-bold">Etapa 1, Sección | Nivel Básico</p>
+            <!-- Tarjetas de temas de quizzes -->
+            <div class="border-2 bg-secondary-subtle rounded-5 p-3 bg-gradient">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-4 justify-content-center">
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="mb-2 mx-auto">
+                                    <i class="fas fa-solid fa-book-open-reader fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Saludos</h6>
+                                <p class="card-text text-primary-emphasis">Aprende cómo saludar y presentarte en Lengua de Señas Peruana. En esta lección, cubriremos los saludos básicos como "hola" y "adiós", así como frases útiles para presentarse y preguntar el nombre de alguien.</p>
+                                <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal">Comenzar</button>
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="mb-2 mx-auto">
+                                    <i class="fas fa-book fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Abecedario</h6>
+                                <p class="card-text text-primary-emphasis">Familiarízate con el abecedario en Lengua de Señas Peruana. Esta lección te enseñará cómo representar cada letra con las manos, una habilidad esencial para deletrear nombres y palabras que no tienen una seña específica.</p>
+                                <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="mb-2 mx-auto">
+                                    <i class="fas fa-music fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Colores</h6>
+                                <p class="card-text text-primary-emphasis">Descubre cómo se expresan los colores en Lengua de Señas Peruana. Aprenderás las señas para colores básicos como rojo, azul, verde, amarillo, entre otros, y cómo combinarlos en oraciones simples.</p>
+                                <button type="button" class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#exampleModal">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="fs-4 fw-bold">Etapa 2, Sección | Nivel Intermedio</p>
+            <!-- Tarjetas de temas de quizzes -->
+            <div class="border-2 bg-secondary-subtle rounded-5 p-3 bg-gradient">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-4 justify-content-center">
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="mb-2 mx-auto">
+                                    <i class="fas fa-ruler-combined fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Animales</h6>
+                                <p class="card-text text-primary-emphasis">Explora el vocabulario de animales en Lengua de Señas Peruana. En esta lección, aprenderás las señas para animales comunes como perro, gato, pájaro, y más, así como cómo describir características de los animales.</p>
+                                <button type="button" class="btn btn-custom">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="mb-2 mx-auto">
+                                    <i class="fas fa-book-atlas fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Números</h6>
+                                <p class="card-text text-primary-emphasis">Aprende a contar y usar números en Lengua de Señas Peruana. Esta lección cubre los números del 1 al 100 y más allá, además de cómo usarlos en contextos prácticos como contar objetos o decir tu edad.</p>
+                                <button type="button" class="btn btn-custom">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="mb-2 mx-auto">
+                                    <i class="fas fa-mail-bulk fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Días y Meses</h6>
+                                <p class="card-text text-primary-emphasis">Conoce las señas para los días de la semana y los meses del año en Lengua de Señas Peruana. Esta lección te permitirá hablar sobre fechas, planes futuros y eventos pasados.</p>
+                                <button type="button" class="btn btn-custom">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="fs-4 fw-bold">Etapa 3, Sección | Nivel Avanzado</p>
+            <!-- Tarjetas de temas de quizzes -->
+            <div class="border-2 bg-secondary-subtle rounded-5 p-3 bg-gradient">
+                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 mt-4">
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="icon-container bg-primary mb-2 mx-auto">
+                                    <i class="fas fa-book fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Familia</h6>
+                                <p class="card-text text-primary-emphasis">Aprende a hablar sobre tu familia y relaciones en Lengua de Señas Peruana. En esta lección, cubriremos las señas para miembros de la familia como madre, padre, hermano, hermana, y más.</p>
+                                <button type="button" class="btn btn-custom">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="icon-container bg-success mb-2 mx-auto">
+                                    <i class="fas fa-flask fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Vocabulario Básico</h6>
+                                <p class="card-text text-primary-emphasis">Amplía tu vocabulario básico en Lengua de Señas Peruana con palabras y frases comunes. Esta lección incluirá señas para palabras esenciales del día a día y frases útiles para la comunicación básica.</p>
+                                <button type="button" class="btn btn-custom">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card grow-on-hover text-primary-emphasis h-100 p-2">
+                            <div class="card-body text-center">
+                                <div class="icon-container bg-danger mb-2 mx-auto">
+                                    <i class="fas fa-globe fa-2x"></i>
+                                </div>
+                                <h6 class="card-title">Emociones</h6>
+                                <p class="card-text text-primary-emphasis">Descubre cómo expresar emociones y sentimientos en Lengua de Señas Peruana. Aprenderás las señas para emociones como feliz, triste, enojado, asustado, y más, así como cómo preguntar sobre el estado emocional de otros.</p>
+                                <button type="button" class="btn btn-custom">Comenzar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

@@ -1,0 +1,42 @@
+<section>
+    <!-- Fondo con gradiente azul y 100% de altura -->
+    <div class="container-fluid" style="min-height: 100vh; display: flex; justify-content: center; align-items: center; background: linear-gradient(to bottom, rgb(0, 51, 102), rgb(74, 144, 226));">
+        <!-- Uso de container para centrar y darle formato al contenido -->
+        <div class="container py-5">
+            <div class="container">
+                <a routerLink="/landing" class="link-light"><i class="bi bi-arrow-left"> Regresar</i></a>
+            </div>
+            <!-- Card principal con transición para hover y bordes redondeados -->
+            <div class="card rounded-5 shadow-lg p-5 px-5" 
+                 style="transition: transform 0.3s, background 0.3s; background: linear-gradient(to bottom, #1a6ec2, #7493c0);"
+                 onmouseover="this.style.transform='scale(1.05)';"
+                 onmouseleave="this.style.transform='scale(1)';">
+                <h1 class="text-white text-center"><b>¿Eres profesor o alumno?</b></h1>
+                <!-- Contenido dentro del card -->
+                <div class="row mt-4 justify-content-around"> <!-- Usamos `justify-content-around` para distribución uniforme -->
+                    <!-- Sección para Profesores -->
+                    <div class="col-md-6 text-center">
+                        <img src="../../../../assets/images/correctopro.png"
+                             alt="Profesor" class="img-fluid rounded-circle w-50 mx-auto shadow-sm">
+                        <p class="mt-3">Soy un profesor. Inicia sesión para gestionar tus clases.</p>
+                        <a routerLink="/crear-teacher" class="btn btn-primary mt-2">
+                            <i class="fas fa-chalkboard-teacher"></i> <!-- Icono -->
+                            Ingresar como Profesor
+                        </a>
+                    </div>
+                    <!-- Sección para Alumnos -->
+                    <div class="col-md-6 text-center">
+                        <img src="../../../../assets/images/alumno.png" 
+                             alt="Alumno" class="img-fluid rounded-circle w-50 mx-auto shadow-sm">
+                        <p class="mt-3">Soy un alumno. Inicia sesión para aprender.</p>
+                        <a routerLink="/crear-student" class="btn btn-primary mt-2">
+                            <i class="fas fa-user-graduate"></i> <!-- Icono -->
+                            Ingresar como Alumno
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

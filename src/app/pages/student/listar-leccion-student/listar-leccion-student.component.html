@@ -1,0 +1,222 @@
+<!-- components/listar-lecciones/listar-lecciones.component.html -->
+<!-- <div class="container pt-4">
+    <h2>Lecciones</h2>
+    <div *ngIf="lecciones.length === 0">No hay lecciones disponibles</div>
+    <ul *ngIf="lecciones.length > 0">
+      <li *ngFor="let leccion of lecciones">
+        <div class="card h-100 card-hover rounded-5 shadow">
+        <div class="card-img-container">
+        <img [src]="'http://localhost:4000/' + leccion.portada" class="card-img-top img-fluid" alt="Portada de {{ leccion.titulo }}">
+      </div>
+        <h3>{{ leccion.titulo }}</h3>
+        <p>{{ leccion.descripcion }}</p>
+        <button class="btn btn-primary" (click)="verLeccion(leccion._id)">Ver Lección</button> -->
+<!-- <button class="btn btn-primary" (click)="verLeccion(leccion._id)">Empezar Lección</button> -->
+<!-- </div>
+      </li>
+    </ul>
+  </div>
+   -->
+
+
+<!-- <div class="container-fluid g-0" style="background-color: #0056b3;">
+    <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+
+    <main>
+        <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbarmenu>
+
+        <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+          
+          <div class="container pt-4">
+            <h2 class="text-uppercase font-monospace">Lecciones</h2>
+            <div *ngIf="lecciones.length === 0" class="alert alert-warning">No hay lecciones disponibles</div>
+            <div class="row" *ngIf="lecciones.length > 0">
+              <div class="col-md-6 col-lg-4 mb-4" *ngFor="let leccion of lecciones">
+                <div class="card h-100 card-hover shadow-sm">
+                  <img [src]="'http://localhost:4000/' + leccion.portada" class="card-img-top img-fluid rounded-top p-2" alt="Portada de {{ leccion.titulo }}">
+                  <div class="card-body d-flex flex-column">
+                    <h3 class="card-title font-monospace">{{ leccion.titulo }}</h3>
+                    <p class="card-text">{{ leccion.descripcion }}</p>
+                    <button class="btn btn-primary mt-auto" (click)="verLeccion(leccion._id)">Ver Lección</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+</div>
+
+        </main>
+
+
+
+<style>
+  .card-hover {
+    transition: transform 0.2s;
+    background-color: #e3dfdf97;
+  }
+
+  .card-hover:hover {
+    transform: scale(1.05);
+    background-color: #b5d6fa;
+  }
+
+  .card-img-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    filter: opacity(0.7);
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .btn-primary {
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+</style> -->
+
+
+<!-- Minimalista -->
+<div class="container-fluid g-0"> <!-- Fondo suave para el contenedor principal -->
+  <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+  <main>
+    <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+      class="fixed-side-nav"></app-navbarmenu>
+    <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+      <div class="container pt-4">
+        <h2 class="text-uppercase text-primary-emphasis">Lecciones</h2>
+        <hr>
+
+        <div class="input-group pb-3">
+          <div class="d-flex ms-0">
+            <input type="text" class="form-control rounded-start-2" placeholder="Buscar lección..." aria-label="Buscar lección">
+            <button class="btn btn-outline-secondary rounded-end-2" type="button" id="button-addon2">
+              <i class="fas fa-search text-primary-emphasis"></i>
+            </button>
+          </div>
+          <div class="ms-5">
+            <div class="dropdown ms-2">
+              <button class="btn btn-image btn-white dropdown-toggle shadow-sm border-secondary" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                NIVEL <i class="fas fa-book"></i>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-graduate pe-3"></i> BÁSICO</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-graduate pe-3"></i> INTERMEDIO</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fas fa-user-graduate pe-3"></i> AVANZADO</a></li>
+                <!-- Añade más opciones según sea necesario -->
+              </ul>
+            </div>
+            
+
+          </div>
+        </div>
+
+        <div *ngIf="lecciones.length === 0" class="alert alert-warning">No hay lecciones disponibles</div>
+        <div class="row" *ngIf="lecciones.length > 0">
+          <div class="col-md-4 col-lg-3 mb-4" *ngFor="let leccion of lecciones">
+            <div class="card h-100 card-hover"> <!-- Sombra más prominente para un aspecto más profesional -->
+              <img [src]="'http://localhost:4000/' + leccion.portada" class="card-img-top img-fluid rounded-top p-2"
+                alt="Portada de {{ leccion.titulo }}">
+              <div class="card-body d-flex flex-column">
+                <div class="d-flex justify-content-between align-items-baseline mb-2">
+                  <h5 class="card-title text-primary-emphasis fs-6 mb-0 me-4"><b>{{ leccion.titulo }}</b></h5>
+                  <span class="badge bg-secondary-subtle text-primary-emphasis fs-15">{{ leccion.nivel }}</span>
+                </div>
+                <p class="card-text text-sm">{{ leccion.descripcion }}</p>
+                <!-- Icono en lugar de botón -->
+                <!-- <a href="#" (click)="verLeccion(leccion._id)" class="mt-auto" aria-label="Ver lección">
+                 <span class="fs-7"> <i class="fas fa-play-circle fa-2x text-primary-emphasis fs-4"></i>  </span>
+                </a> -->
+                <a href="#" (click)="verLeccion(leccion._id)" class="mt-auto btn  btn-ir text-primary-emphasis" aria-label="Ver lección">
+                  Ir a Cuestionario  <i class="fas fa-arrow-right fa-lg ms-2"></i> 
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<style>
+
+.dropdown-menu {
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 250px;
+  box-shadow: 3px 3px 4px rgba(97, 96, 96, 0.5);
+  border-radius: 10px;
+  padding-bottom: 20px;
+  /* color: #060640; */
+}
+
+.dropdown-menu :hover {
+  background-color: #f5f7fa;
+  /* color: black; */
+  color: #0147A2;
+  box-shadow: 1px 0 0px 0px #0147A2;
+}
+
+.dropdown-item {
+  /* font-family: "Playwrite NZ", cursive; */
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+
+  .card-hover {
+    transition: transform 0.2s, box-shadow 0.2s;
+    /* Un fondo sutil para los cards */
+    /* height: 50px; */
+
+  }
+
+  .card-hover:hover {
+    transform: scale(1.05);
+
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    /* Sombra más intensa al hacer hover */
+  }
+
+  .card-img-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    filter: opacity(0.85);
+    /* Opacidad ajustada para un mejor contraste */
+    height: 200px;
+    object-fit: cover;
+  }
+
+  /* Estilizar el icono de FontAwesome */
+  .fa-play-circle {
+    transition: transform 0.3s, color 0.3s;
+  }
+
+  .fa-play-circle:hover {
+    transform: scale(1.1);
+    color: #0056b3;
+    /* Cambiar color al hacer hover */
+  }
+
+  .btn-ir{
+    border: 1px solid #0056b3;
+
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .btn-ir:hover{
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+    background-color: rgb(215, 235, 253);
+  }
+</style>

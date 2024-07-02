@@ -1,0 +1,78 @@
+@media (min-width: 991.98px) {
+    main {
+        padding-left: 240px;
+    }
+}
+
+
+.fixed-topbar {
+    position: fixed; /*con esto se mantiene estatico la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+  .fixed-side-nav {
+    position: fixed;
+  }
+  
+  .black-border{
+    border: 2px solid #4337c8;
+  }
+  
+  app-topbar-teacher{
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 4rem;
+    z-index: 2;
+  }
+  
+  main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+  }
+  
+  app-navbar-teacher{
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem);
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    background-color: #e6e1e194;
+    /* border-top: 1px solid white; */
+  
+    /* esto se pone */
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: left 250ms ease-in width 250ms ease-in;
+    cursor: pointer;
+  }
+  
+  /* cada ves que se abre */
+  .app-side-nav-open{
+    width: 250px;
+  }
+  
+  
+  .display-area {
+    position: absolute;
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+  
+  .display-area-shrink {
+    width: calc(100% - 250px);
+    left: 250px;
+  }
+  
+  .grow-on-hover {
+    transition: transform 0.3s;
+  }
+  
+  .grow-on-hover:hover {
+    transform: scale(1.09);
+  }
+  

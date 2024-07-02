@@ -1,0 +1,73 @@
+<div class="container-fluid g-0">
+    <app-topbar-teacher (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar-teacher>
+    <main>
+      <app-navbar-teacher [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbar-teacher>
+      <!-- cuerpo -->
+      <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+        <p class="fs-3 fw-bold text-primary-emphasis ms-4"><b>Diccionario</b></p>
+        <div class="container mt-5">
+          <form [formGroup]="terminoForm" (ngSubmit)="submitForm()" class="mb-4 p-4 border rounded shadow-sm bg-light">
+            <div class="mb-3">
+              <label for="title" class="form-label">Título</label>
+              <input id="title" formControlName="title" class="form-control" placeholder="Título" required />
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Descripción</label>
+              <textarea id="description" formControlName="description" class="form-control" placeholder="Descripción" required></textarea>
+            </div>
+            <div *ngIf="editMode && currentImageUrl" class="mb-3">
+              <p>Imagen Actual:</p>
+              <img [src]="'http://localhost:4000/' + currentImageUrl" alt="Imagen Actual" class="img-thumbnail" width="200"/>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">{{ editMode ? 'Cambiar Imagen:' : 'Subir Imagen:' }}</label>
+              <input type="file" class="form-control" (change)="onFileChange($event)" [required]="!editMode || !currentImageUrl" />
+            </div>
+            <div *ngIf="previewImageUrl" class="mb-3">
+              <p>Vista Previa:</p>
+              <img [src]="previewImageUrl" alt="Vista Previa" class="img-thumbnail" width="200"/>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary me-2">{{ editMode ? 'Actualizar' : 'Crear' }}</button>
+              <button type="button" class="btn btn-secondary" (click)="cancelEdit()" *ngIf="editMode">Cancelar</button>
+            </div>
+          </form>
+  
+          <div class="row row-cols-1 row-cols-md-3 g-4 mt-4">
+            <div *ngFor="let termino of terminos" class="col">
+              <div class="card h-100 card-hover rounded-5 shadow">
+                <div class="card-img-container">
+                    <img [src]="'http://localhost:4000/' + termino.imageUrl" class="card-img-top img-fluid" alt="{{ termino.title }}">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{ termino.title }}</h5>
+                  <div class="d-flex justify-content-between mt-3">
+                    <button class="btn btn-outline-primary" (click)="editTermino(termino)">Editar</button>
+                    <button class="btn btn-outline-danger" (click)="deleteTermino(termino._id)">Eliminar</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <style>
+      img {
+  color: #0056b3;
+}
+.card-img-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+  </style>

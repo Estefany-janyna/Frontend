@@ -1,0 +1,170 @@
+/* Ajustes para el tamaño de las imágenes y el centrado */
+.card {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border: 2px solid #000000;
+  margin: 0 10px;
+  height: 300px;
+  width: 300px;
+
+  /* Ajusta el margen horizontal según sea necesario */
+}
+
+.card:hover {
+  transform: scale(1.1);
+  /* Ajusta el valor de escala al hacer hover según sea necesario */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para el centrado y separación del contenido del modal */
+.modal-body {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
+  border: 0;
+  /* Ajusta el margen superior según sea necesario */
+}
+
+.progress {
+  width: 50%;
+  /* Ajusta el ancho de la barra de progreso según sea necesario */
+  margin: 0 auto;
+  /* Centra la barra de progreso horizontalmente */
+}
+
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  /* Ajusta la altura según sea necesario */
+}
+
+.modal-title {
+  margin-bottom: 0;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 200px;
+  /* Ajusta el padding para mantener la distancia de los lados */
+}
+
+/* Ajusta el margen derecho del botón Comprobar para que esté más cerca del extremo derecho */
+.modal-footer .btn-primary:last-child {
+  margin-right: 0;
+}
+
+.selected-card {
+  background-color: #e1faff;
+  border: 2px solid #00e1ff;
+  /* Cambia el color del borde cuando está seleccionado */
+}
+
+.continuar-container {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+/* Estilos para separar visualmente el mensaje y el botón "Continuar" */
+.mensaje-container {
+  margin-right: 850px;
+  /* Ajusta la distancia según sea necesario */
+}
+
+.mensaje-incorrecto {
+  color: red;
+  font-size: 1.5em;
+}
+
+.mensaje-correcto {
+  color: green;
+  font-size: 1.5em;
+}
+
+.boton-incorrecto {
+  background-color: red;
+    border-radius: 25px;
+    padding: 15px 30px;
+    color: #ffffff;
+  font-size: 1.5em;
+}
+
+.boton-correcto{
+  background-color: rgb(6, 161, 6);
+  border-radius: 25px;
+  padding: 15px 30px;
+  color: #ffffff;
+  font-size: 1.5em;
+  /* Texto blanco */
+}
+
+
+
+/* Estilo para el contenedor del mensaje y el botón */
+.mensaje-sin-vidas-container {
+  background-color: #fff;
+  /* Fondo blanco */
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  /* Asegura que el contenedor esté por encima del contenido del modal */
+}
+
+
+/* Ajusta estilos para el texto del mensaje y el subtítulo */
+.mensaje-sin-vidas,
+.subtitulo-sin-vidas {
+  color: #333;
+  /* Color de texto negro o ajusta según tus preferencias */
+}
+
+/* Ajusta estilos para el botón "Seguir aprendiendo" */
+.btn-seguir-aprendiendo {
+  background-color: #007bff;
+  /* Color azul brillante, puedes ajustar según tus preferencias */
+  color: #fff;
+  /* Texto en color blanco */
+  border: none;
+  /* Sin borde */
+  border-radius: 8px;
+  /* Esquinas redondeadas */
+  padding: 10px 20px;
+  /* Ajusta el relleno según sea necesario */
+  cursor: pointer;
+  /* Cambia el cursor al pasar sobre el botón */
+}
+
+.btn-seguir-aprendiendo:hover {
+  background-color: #0056b3;
+  /* Cambia el color al pasar sobre el botón */
+}
+
+.modal-disabled {
+  pointer-events: none;
+}
+
+/* Agrega un fondo oscuro cuando el modal está desactivado */
+.modal-disabled::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}

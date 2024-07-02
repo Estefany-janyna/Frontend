@@ -1,0 +1,112 @@
+.fixed-topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1030;
+  }
+  .fixed-side-nav {
+    position: fixed;
+  
+  }
+  
+  .black-border{
+    border: 2px solid #4337c8;
+  }
+  
+  app-topbar-teacher {
+    position: fixed;
+    width: 100%;
+    top: 0px;
+    height: 4rem;
+    z-index: 2;
+  }
+  
+  main{
+    position: absolute;
+    width: 100%;
+    top: 4rem;
+    z-index: 1;
+  }
+  
+  app-navbar-teacher{
+    position: absolute;
+    left: 0rem;
+    width: 60px;
+    height: calc(100vh - 4rem);
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); */
+    background-color: #e6e1e194;
+    /* border-top: 1px solid white; */
+  
+    /* esto se pone */
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: left 250ms ease-in width 250ms ease-in;
+    cursor: pointer;
+  }
+  
+  /* cada ves que se abre */
+  .app-side-nav-open{
+    width: 250px;
+  }
+  /* Importante centra el contenido */
+  .display-area {
+    position: absolute;
+    left: 60px;
+    width: calc(100% - 60px);
+  }
+
+.display-area-shrink {
+    width: calc(100% - 250px);
+    margin-left: 180px;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+    box-shadow: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.btn-primary {
+    background-color: #7d26cd;
+    border-color: #7d26cd;
+}
+
+.btn-primary:hover {
+    background-color: #ab75dd;
+    border-color: #ab75dd;
+}
+
+/* .border-2 {
+    border: 2px solid #4337c8;
+} */
+
+
+/* Estilos para la vista de perfil */
+
+/* Estilos adicionales para el perfil */
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+}
+
+/* Animaciones */
+.animate__animated {
+    animation-duration: 0.5s;
+}
+
+.animate__fadeIn {
+    animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,53 @@
+<div class="container-fluid g-0">
+    <app-topbar (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar>
+  
+    <main>
+      <app-navbarmenu [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbarmenu>
+  
+      <div class="display-area p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+        <div class="container mt-5">
+          <div class="d-flex justify-content-end mb-3">
+            <button class="btn text-primary-emphasis" (click)="goBack()">
+              <i class="fa fa-times-circle fs-1" aria-hidden="true"></i>
+            </button>
+          </div>
+          <div *ngIf="termino" class="card mt-3 rounded-4 border shadow-lg">
+            <div class="text-center text-primary-emphasis mt-3">
+                <h5 class="card-title fs-1"><b>{{ termino.title }}</b></h5>
+                <hr>
+            </div>
+            <div class="row g-0 m-5">
+              <div class="col-md-6">
+                <div class="card-img-container">
+                <img [src]="'http://localhost:4000/' + termino.imageUrl" class="card-img-top" alt="{{ termino.title }}">
+              </div>
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <p class="card-text justify-content-center fs-3">{{ termino.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+
+  <style>
+          img {
+  color: #0056b3;
+}
+.card-img-container {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+  </style>

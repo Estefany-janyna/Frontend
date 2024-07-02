@@ -1,0 +1,102 @@
+<div class="container-fluid g-0">
+    <app-topbar-teacher (navbarMenu)="navbarStatus = $event;" class="fixed-topbar"></app-topbar-teacher>
+  
+    <main class="d-flex">
+      <app-navbar-teacher [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}" class="fixed-side-nav"></app-navbar-teacher>
+  
+      <div class="display-area col-lg-6 col-md-8 col-sm-10 col-xs-12 p-3" [ngClass]="{'display-area-shrink': navbarStatus}">
+        <p class="fs-3 fw-bold text-primary-emphasis">Perfil</p>
+   <!-- Contenedor de los bloques -->
+   <div class="d-md-flex flex-md-row gap-3">
+    <!-- Primer Bloque: Vista de Perfil -->
+    <div class="border border-2 bg-white shadow-lg rounded-4 p-3 flex-grow-1">
+      <div *ngIf="user" class="profile-view animate__animated animate__fadeIn">
+        <div class="row align-items-center p-3">
+          <div class="col-md-4 text-center">
+            <img src="../../../../assets/images/profile.jpg" class="rounded-circle profile-pic mb-3 grow-on-hover" alt="Foto de perfil">
+          </div>
+          <div class="col-md-8">
+            <div class="profile-details p-3 text-primary-emphasis">
+              <p><strong>Nombre:</strong> {{ user.name }}</p>
+              <hr>
+              <p><strong>Apellido:</strong> {{ user.surname }}</p>
+              <hr>
+              <p><strong>Nombre de Usuario:</strong> {{ user.username }}</p>
+              <hr>
+              <p><strong>Email:</strong> {{ user.email }}</p>
+              <hr>
+              <p><strong>Teléfono:</strong> {{ user.phone }}</p>
+              <hr>
+              <div class="text-end">
+                <button (click)="editProfile()" class="btn btn-outline-primary rounded-3 m-3">
+                  <i class="bi bi-pencil-square"></i> Editar Perfil
+                </button>
+                <button (click)="deleteProfile()" class="btn btn-outline-danger rounded-3  m-3">
+                  <i class="bi bi-trash"></i> Eliminar Perfil
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- Segundo Bloque: Formulario de Edición -->
+<div *ngIf="isEditing" class="border border-2 bg-white shadow-lg rounded-4 p-3 bg-gradient flex-grow-1 mt-md-0 mt-3">
+  <div class="edit-form animate__animated animate__fadeIn">
+    <form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+      <div class="container">
+        <h3 class="fs-5 text-primary-emphasis text-decoration-underline text-center">Editar Perfil</h3><br>
+        <div class="row text-primary-emphasis">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nombre: </label>
+              <input type="text" id="name" class="form-control rounded-5" formControlName="name" name="name" required>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="surname" class="form-label">Apellido: </label>
+              <input type="text" id="surname" class="form-control rounded-5" formControlName="surname" name="surname">
+            </div>
+          </div>
+        </div>
+        <div class="row text-primary-emphasis">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="username" class="form-label">Nombre de Usuario: </label>
+              <input type="text" id="username" class="form-control rounded-5" formControlName="username" name="username">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="email" class="form-label">Email: </label>
+              <input type="email" id="email" class="form-control rounded-5" formControlName="email" name="email">
+            </div>
+          </div>
+        </div>
+        <div class="row text-primary-emphasis">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="phone" class="form-label">Teléfono: </label>
+              <input type="tel" id="phone" class="form-control rounded-5" formControlName="phone" name="phone">
+            </div>
+          </div>
+          <div class="col-md-6 d-flex justify-content-end align-items-center">
+            <button type="submit" class="btn btn-outline-success me-2 rounded-3 m-3">
+              <i class="bi bi-save"></i> Guardar
+            </button>
+            <button type="button" class="btn btn-outline-secondary rounded-3 m-3" (click)="cancelEdit()">
+              <i class="bi bi-x-circle"></i> Cancelar
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+
+</div>
+</main>
+</div>

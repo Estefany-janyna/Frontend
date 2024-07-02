@@ -1,0 +1,81 @@
+.fixed-side-nav {
+  position: fixed;
+}
+
+.gradient-background {
+  background: #b3e5fc !important; /* Celeste clarito */
+}
+
+app-topbar-admin {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  height: 4rem;
+  z-index: 2;
+}
+
+main {
+  position: absolute;
+  width: 100%;
+  top: 4rem;
+  z-index: 1;
+}
+
+app-navbar-admin {
+  position: absolute;
+  left: 0rem;
+  width: 60px;
+  height: calc(100vh - 4rem);
+  background-color: #ffffff;
+  /* border-top: 1px solid white; */
+  box-shadow: 3px 3px 4px rgba(97, 96, 96, 0.5);
+  /* esto se pone */
+  overflow-x: hidden;
+  white-space: nowrap;
+  transition: left 250ms ease-in width 250ms ease-in;
+  cursor: pointer;
+  padding-top: 20px;
+  /* border-radius: 0 40px 0 0; */
+}
+
+.app-side-nav-open {
+  width: 240px;
+}
+
+.display-area {
+  position: absolute;
+  left: 80px;
+  width: calc(100% - 60px);
+}
+
+.display-area-shrink {
+  width: calc(100% - 250px);
+  left: 260px;
+}
+
+.grow-on-hover {
+  transition: transform 0.3s;
+}
+
+.grow-on-hover:hover {
+  transform: scale(1.09);
+}
+
+.card {
+  background-color: #a9bfdba9;
+  transition: transform 0.3s ease;
+  padding: 30px;
+  color: #0147A2;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 12px 10px #eaeaee;
+  color: #060640;
+}
+
+.color-fonfo{
+  box-shadow: 0 5px 12px 10px #d2ebf87a;
+}
+
+

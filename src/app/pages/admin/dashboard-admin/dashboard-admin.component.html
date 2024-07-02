@@ -1,0 +1,197 @@
+<div class="container-fluid g-0">
+    <app-topbar-admin (navbarMenu)="navbarStatus = $event;"></app-topbar-admin>
+
+    <main>
+        <app-navbar-admin [navbarStatus]="navbarStatus" [ngClass]="{'app-side-nav-open': navbarStatus}"
+            class="fixed-side-nav"></app-navbar-admin>
+
+        <div class="display-area" [ngClass]="{'display-area-shrink': navbarStatus}">
+            <p class="fs-1 fw-bold text-primary-emphasis">Dashboard</p>
+            <!-- Tarjetas de temas de quizzes -->
+            <div class="row mt-5">
+                <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+                    <div
+                        class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
+                        <h1 class="h2 fstat-no text-primary-emphasis">Bienvenido, Administrador</h1>
+                    </div>
+
+                    <div class="row mb-4 p-3 g-1 rounded-5 color-fonfo bg-white">
+                        <!-- Estadísticas Generales -->
+                        <div class="col-lg-3 mx-auto col-md-6 p-3 m-1">
+                            <div class="card mb-4 bg-white ">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-user-graduate fa-3x "></i>
+                                    <h5 class="card-title ">Estudiantes</h5>
+                                    <p class="card-text ">150</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 mx-auto col-md-6 p-3 m-1">
+                            <div class="card mb-4 bg-white">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-chalkboard-teacher fa-3x"></i>
+                                    <h5 class="card-title">Profesores</h5>
+                                    <p class="card-text">20</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 mx-auto col-md-6 p-3 m-1">
+                            <div class="card mb-4 bg-white">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-book fa-3x"></i>
+                                    <h5 class="card-title">Lecciones</h5>
+                                    <p class="card-text">45</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 mx-auto col-md-6 p-3 m-1">
+                            <div class="card mb-4 bg-white">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-clipboard-list fa-3x"></i>
+                                    <h5 class="card-title">Quizzes</h5>
+                                    <p class="card-text">30</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4 p-3 g-1 rounded-5 color-fonfo bg-white">
+                        <!-- Actividades Recientes -->
+                        <div class="col-md-8">
+                            <h2 class="text-primary-emphasis">Actividades Recientes</h2>
+                            <ul class="list-group mb-4">
+                                <li class="list-group-item">
+                                    <i class="fas fa-user-graduate"></i> Juan Pérez completó la lección "Introducción a
+                                    la Lengua de Señas".
+                                    <span class="badge bg-primary badge-pill">Hace 2 horas</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-chalkboard-teacher"></i> María Gómez añadió una nueva lección
+                                    "Señas Avanzadas".
+                                    <span class="badge bg-primary badge-pill">Hace 5 horas</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-user-graduate"></i> Ana López aprobó el quiz "Lección 2".
+                                    <span class="badge bg-primary badge-pill">Hace 1 día</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Notificaciones -->
+                        <div class="col-md-4">
+                            <h2 class=" text-primary-emphasis">Notificaciones</h2>
+                            <div class="list-group mb-4">
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-exclamation-circle"></i> Nuevo comentario en la lección "Señas
+                                    Básicas".
+                                    <span class="badge bg-warning badge-pill">Nuevo</span>
+                                </a>
+                                <a href="#" class="list-group-item list-group-item-action">
+                                    <i class="fas fa-info-circle"></i> Actualización de sistema programada para mañana.
+                                    <span class="badge bg-info badge-pill">Mañana</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-5 g-1 rounded-5 color-fonfo p-4 bg-white">
+                        <!-- Acciones Rápidas -->
+                        <div class="col-lg-3 col-md-6 m-2 mx-auto p-2">
+                            <div class="card rounded-5 bg-white">
+                                <div class="card-body text-center p-0">
+                                    <i class="fas fa-user-graduate fa-3x "></i>
+                                    <h5 class="card-title">Gestionar Estudiantes</h5>
+                                    <p class="card-text">Añadir, editar y eliminar estudiantes.</p>
+                                    <a href="#" class="btn btn-outline-primary">Ir a Estudiantes</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 m-2 mx-auto p-2">
+                            <div class="card rounded-5 bg-white">
+                                <div class="card-body text-center p-0">
+                                    <i class="fas fa-chalkboard-teacher fa-3x "></i>
+                                    <h5 class="card-title">Gestionar Profesores</h5>
+                                    <p class="card-text">Añadir, editar y eliminar profesores.</p>
+                                    <a href="#" class="btn btn-outline-primary">Ir a Profesores</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 m-2 mx-auto p-2">
+                            <div class="card rounded-5 bg-white">
+                                <div class="card-body text-center p-0">
+                                    <i class="fas fa-book fa-3x "></i>
+                                    <h5 class="card-title">Gestionar Lecciones</h5>
+                                    <p class="card-text">Crear y editar lecciones.</p>
+                                    <a href="#" class="btn btn-outline-primary">Ir a Lecciones</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4 p-3 g-1 rounded-5 color-fonfo bg-white">
+                        <!-- Tareas Pendientes -->
+                        <div class="col-md-6">
+                            <h2 class="text-primary-emphasis">Tareas Pendientes</h2>
+                            <ul class="list-group mb-4">
+                                <li class="list-group-item">
+                                    <i class="fas fa-tasks"></i> Revisar comentarios pendientes.
+                                    <span class="badge bg-warning badge-pill">5</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-tasks"></i> Aprobar nuevos registros de estudiantes.
+                                    <span class="badge bg-info badge-pill">3</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-tasks"></i> Actualizar contenido de la lección "Lengua de Señas
+                                    Intermedio".
+                                    <span class="badge bg-secondary badge-pill">1</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Usuarios Recientes -->
+                        <div class="col-md-6">
+                            <h2 class="text-primary-emphasis">Usuarios Recientes</h2>
+                            <ul class="list-group mb-4">
+                                <li class="list-group-item">
+                                    <i class="fas fa-user"></i> Carlos Martínez se unió como estudiante.
+                                    <span class="badge bg-success badge-pill">Nuevo</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-user"></i> Elena Rodríguez se unió como profesora.
+                                    <span class="badge bg-success badge-pill">Nuevo</span>
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-user"></i> Laura Ramírez se unió como estudiante.
+                                    <span class="badge bg-success badge-pill">Nuevo</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4 p-3 g-1 rounded-5  bg-white">
+                        <!-- Feedback de Usuarios -->
+                        <div class="col-md-12">
+                            <h2 class="text-primary-emphasis">Feedback de Usuarios</h2>
+                            <ul class="list-group mb-4">
+                                <li class="list-group-item">
+                                    <i class="fas fa-comment"></i> "Me encanta el curso, pero me gustaría que hubieran
+                                    más ejercicios prácticos." - Pedro García
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-comment"></i> "La interfaz es muy intuitiva y fácil de usar. Buen
+                                    trabajo!" - Lucía Fernández
+                                </li>
+                                <li class="list-group-item">
+                                    <i class="fas fa-comment"></i> "Sería genial si pudieran agregar más videos
+                                    explicativos." - José Martínez
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+    </main>
+</div>

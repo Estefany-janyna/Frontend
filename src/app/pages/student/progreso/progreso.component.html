@@ -1,0 +1,125 @@
+<!-- MO ELIMINAR ES PARA PROFESOR -->
+<!-- <div *ngIf="progreso.length > 0">
+  <h2>Progreso del Estudiante</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Lección</th>
+        <th>Puntaje</th>
+        <th>Porcentaje Completado</th>
+        <th>Nivel</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prog of progreso">
+        <td>{{ prog.leccionId.titulo }}</td>
+        <td>{{ prog.puntaje }}</td>
+        <td>{{ prog.porcentajeCompletado }}%</td>
+        <td>{{ prog.nivel }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div> -->
+
+<!-- 
+<div class="container">
+  <h2>Progreso del Estudiante Se mostrara</h2>
+  <div class="pt-1 ms-auto">
+    <canvas id="progresoChart"></canvas>
+  </div>
+</div>
+ -->
+<!-- progreso.component.html -->
+<!-- <div class="container">
+  <h2>Progreso del Estudiante</h2>
+  <div class="chart-container">
+    <canvas id="progresoChart"></canvas>
+  </div>
+</div>
+
+<style>
+  .chart-container {
+    position: relative;
+    height: 400px; /* Fija la altura del contenedor */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+  }
+
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+</style> -->
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-md-6 chart-container">
+      <h3>Progreso Total</h3>
+      <canvas id="progresoChart"></canvas>
+    </div>
+    <div class="col-md-6 chart-container">
+      <h3>Progreso por Nivel</h3>
+      <canvas id="levelChart"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .chart-container {
+    position: relative;
+    height: 400px; /* Fija la altura del contenedor */
+    overflow: hidden; /* Oculta cualquier desbordamiento */
+  }
+
+  canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+  }
+</style>  -->
+<main style="margin-top: 58px;">
+  <div class="container pt-4">
+    <div class="text-center mb-4">
+      <h3 class="display-5">Progreso del Estudiante</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="progresoChart"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="levelChart"></canvas>
+      </div>
+    </div>
+    <!-- <div *ngIf="feedback" class="mt-4 alert alert-info text-center">
+      <p class="mb-0">{{ feedback }}</p>
+    </div> -->
+  </div>
+</main>
+
+<style>
+  .chart-container {
+    position: relative;
+    height: 40vh;
+    width: 80vw;
+  }
+</style>
+
+
+<div *ngIf="progreso.length > 0">
+  <div *ngFor="let item of progreso">
+    <h3>{{ item.leccionId.titulo }}</h3>
+    <p>Nivel: {{ item.nivel }}</p>
+    <p>Puntaje: {{ item.puntaje }}</p>
+    <p>Porcentaje Completado: {{ item.porcentajeCompletado }}%</p>
+  </div>
+  <div>
+    <canvas id="progresoChart"></canvas>
+    <canvas id="levelChart"></canvas>
+  </div>
+</div>
+<div *ngIf="progreso.length === 0">
+  <p>No se encontró progreso para este estudiante.</p>
+</div>
+
